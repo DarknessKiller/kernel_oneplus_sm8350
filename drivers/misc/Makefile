@@ -70,6 +70,7 @@ obj-$(CONFIG_CS_F61_NDT) 	+= cs_press/
 obj-$(CONFIG_PROFILER)			+= profiler.o
 obj-$(CONFIG_WIGIG_SENSING_SPI)	+= wigig_sensing.o
 obj-$(CONFIG_HISI_HIKEY_USB)	+= hisi_hikey_usb.o
+obj-$(CONFIG_KPROFILES) += kprofiles/
 
 #ifdef OPLUS_FEATURE_SIM_DETECT
 obj-$(CONFIG_SIM_DETECT)	+= sim_detect.o
