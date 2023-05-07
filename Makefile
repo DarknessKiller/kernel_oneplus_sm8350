@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: GPL-2.0
 VERSION = 5
 PATCHLEVEL = 4
-SUBLEVEL = 240
+SUBLEVEL = 241
 EXTRAVERSION =
 NAME = Kleptomaniac Octopus
 
@@ -543,7 +543,6 @@ OPLUS_AGING_TEST := true
 #enable kasan
 OPLUS_KASAN_TEST := true
 endif
-$(warning OPLUS_KASAN_TEST is $(OPLUS_KASAN_TEST))
 
 ifeq ($(AGING_DEBUG_MASK),3)
 #enable rtb
@@ -594,8 +593,6 @@ OPLUS_MEMLEAK_DETECT := true
 endif
 
 #Add for memleak test
-$(warning TARGET_MEMLEAK_DETECT_TEST value is "$(TARGET_MEMLEAK_DETECT_TEST)")
-$(warning OPLUS_MEMLEAK_DETECT value is "$(OPLUS_MEMLEAK_DETECT)")
 export OPLUS_MEMLEAK_DETECT
 #endif
 
@@ -898,8 +895,6 @@ KBUILD_CFLAGS += -Wno-tautological-compare
 # source of a reference will be _MergedGlobals and not on of the whitelisted names.
 # See modpost pattern 2
 KBUILD_CFLAGS += -mno-global-merge
-KBUILD_CFLAGS += $(call cc-disable-warning, undefined-optimized)
-KBUILD_CFLAGS += -fno-builtin
 else
 
 # Warn about unmarked fall-throughs in switch statement.
