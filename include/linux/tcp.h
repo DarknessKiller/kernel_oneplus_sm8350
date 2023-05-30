@@ -217,6 +217,7 @@ struct tcp_sock {
 	u16	advmss;		/* Advertised MSS			*/
 	u8	compressed_ack;
 	u8	tlp_retrans:1,	/* TLP is a retransmission */
+	    fast_ack_mode:2, /* which fast ack mode ? */
 		unused_1:7;
 	u32	chrono_start;	/* Start time in jiffies of a TCP chrono */
 	u32	chrono_stat[3];	/* Time in jiffies for chrono_stat stats */
@@ -404,6 +405,8 @@ struct tcp_sock {
 	 */
 	struct request_sock __rcu *fastopen_rsk;
 	u32	*saved_syn;
+/* Rerouting information */
+	u16	ecn_rehash;	/* PLB triggered rehash attempts */
 };
 
 enum tsq_enum {
